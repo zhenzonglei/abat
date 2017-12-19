@@ -4,8 +4,8 @@ function call = readPACall(callFile)
 
 M = csvread(callFile); 
 
-call.probe_id  = M(:,1);
-call.value = M(:,2:end);
+call.probe_id  = M(:,1)';
+call.value = M(:,2:end)';
 
 clear M
 

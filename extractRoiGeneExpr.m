@@ -30,9 +30,12 @@ for s = 1:length(sessid)
         [C,Is,~] = intersect(sample_img_coords,roi_img_coords,'rows');
         
         % get expression data
+        % roi(s,i).donor = donor;
+        roi(s,i).call = gene.call.value(Is,:);
         roi(s,i).label = label{i};
-        roi(s,i).expr_val = gene.expression.value(:,Is);
+        roi(s,i).expr_val = gene.expression.value(Is,:);
         roi(s,i).sample_img_coords = C;
         roi(s,i).sample_mni_coords = sample_mni_coords(Is,:);
+        roi(s,i).meas = [];
     end
 end

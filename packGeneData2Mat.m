@@ -20,5 +20,5 @@ for s = 1:length(sessid)
     outFile = fullfile(dataDir,sessid{s},'gene','Gene.mat');
     save(outFile,'donor','sample', 'call','expression', 'probe')
     
-    fprintf('Pack gene done for %s(probe,sample):(%d,%d)\n', donor,size(expression.value));
+    fprintf('Pack gene done for %s(sample,probe):(%d,%d)\n', donor,size(expression.value));
 end

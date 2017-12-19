@@ -8,11 +8,11 @@ for s = 1:length(sessid)
     express_val = gene.expression.value;
    
     % do filtering
-    fprintf('Filter gene data for %s(probe,sample):(%d,%d)\n', donor,size(express_val));   
-    [coeff, score] = pca(zscore(express_val));
+    fprintf('Filter gene data for %s(sample,probe):(%d,%d)\n', donor,size(express_val));   
+    [coeff, score] = pca(zscore(express_val'));
     coeff(:,1) = 0;
     express_val = score*coeff'; 
-    gene.expression.value = express_val; 
+    gene.expression.value = express_val'; 
     
     % save filtered data   
     outFile = fullfile(dataDir,donor,'gene','GeneFiltered.mat');
