@@ -17,7 +17,7 @@ for s = 1:length(sessid)
     probeFile = fullfile(dataDir, sessid{s},'gene','Probes.csv');
     probe = readProbes(probeFile);
     
-    outFile = fullfile(dataDir,sessid{s},'gene','Gene.mat');
+    outFile = fullfile(dataDir,sessid{s},'gene','raw.mat');
     save(outFile,'donor','sample', 'call','expression', 'probe')
     
     fprintf('Pack gene done for %s(sample,probe):(%d,%d)\n', donor,size(expression.value));

@@ -1,5 +1,5 @@
-function roi = extractRoiGeneExpr(dataDir,sessid,roiId,geneFile,mniRoiFile,labelFile)
-% roi = extractRoiGeneExpr(dataDir,sessid,roiId,geneFile,mniRoiFile)
+function roi = sample2VolRoi(dataDir,sessid,roiId,geneFile,mniRoiFile,labelFile)
+% roi = sample2VolRoi(dataDir,sessid,roiId,geneFile,mniRoiFile)
 % roiId is vector.
 % read roi volume
 % if nargin < 5, mniRoiFile = 'cytoMPM_thr25_2mm.nii.gz'; end
